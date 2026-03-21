@@ -482,6 +482,7 @@
   </main>
 
   <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
     const toggle = document.getElementById("themeToggle");
     const saved = localStorage.getItem("theme-qceo") || "light";
     document.documentElement.setAttribute("data-theme", saved);
