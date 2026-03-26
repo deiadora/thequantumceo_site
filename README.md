@@ -79,7 +79,7 @@ The convergence is the data point: theoretical quantum physics, neuroscience, an
 
 ### dark / light mode
 - Default: **light mode**
-- Light paper: `#f4f2ec` · card: `#fffff2` · gold: `#8B5E2A` (beeswax)
+- Light paper: `#f4f2ec` · card: `#fffff2` · muted: `#5a554e` · gold: `#8B5E2A` (beeswax)
 - Dark paper: `#010003` · card: `#151515` · gold: `#e6c47d`
 
 ---
