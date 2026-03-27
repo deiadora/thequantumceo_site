@@ -485,14 +485,14 @@
     const toggle = document.getElementById("themeToggle");
     const saved = localStorage.getItem("theme-qceo") || "light";
     document.documentElement.setAttribute("data-theme", saved);
-    toggle.textContent = saved === "dark" ? "☀️" : "🌙";
+    toggle.textContent = saved === "dark" ? "🌙" : "☀️";
 
     toggle.addEventListener("click", () => {
       const current = document.documentElement.getAttribute("data-theme");
       const next = current === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       localStorage.setItem("theme-qceo", next);
-      toggle.textContent = next === "dark" ? "☀️" : "🌙";
+      toggle.textContent = next === "dark" ? "🌙" : "☀️";
     });
   </script>
 </body>
