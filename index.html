@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>the quantum ceo — inner architecture for people who build things that matter</title>
-  <meta name="description" content="where cognitive science meets consciousness — and both meet your work. books, poems, and mind reads for the soul that also runs things." />
+  <meta name="description" content="Quantum Currency: Field Research on Human Coherence — mapping quantum field theory, neuroscience, and geometric systems thinking onto the ten centres of the human system." />
   <meta property="og:title" content="the quantum ceo" />
   <meta property="og:description" content="inner architecture for people who build things that matter." />
   <meta property="og:type" content="website" />
@@ -17,382 +17,361 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
     :root {
-  --ink:        #ebe7dc;
-  --paper:      #0c1516;
-  --card:       #0e171a;
-  --card-lt:    #131f23;
-  --gold:       #ecb02f;
+      --ink:        #ebe7dc;
+      --paper:      #0c1516;
+      --card:       #0e171a;
+      --card-lt:    #131f23;
+      --gold:       #ecb02f;
 
-  /* ── spectrum variables ── */
-  --node-0:     #0c1516;
-  --node-1:     #6b2d1a;
-  --node-2:     #9d4418;
-  --node-3:     #c49a3c;
-  --node-4:     #7a9e2a;
-  --node-5:     #2d6a1f;
-  --node-6:     #0f6e56;
-  --node-7:     #1a6b9e;
-  --node-8:     #3c3489;
-  --node-9:     #2d1a4e;
+      --node-0:     #0c1516;
+      --node-1:     #6b2d1a;
+      --node-2:     #9d4418;
+      --node-3:     #c49a3c;
+      --node-4:     #7a9e2a;
+      --node-5:     #2d6a1f;
+      --node-6:     #0f6e56;
+      --node-7:     #1a6b9e;
+      --node-8:     #3c3489;
+      --node-9:     #2d1a4e;
 
-  --accent:     #3c3489;  /* node-8 · structure · octagon */
-  --accent-lt:  #6a6ab5;
+      --accent:     #3c3489;
+      --accent-lt:  #6a6ab5;
 
-  --muted:      #cbc6ba;
-  --line:       rgba(240,237,230,.1);
-  --r:          8px;
-  --serif:      'Exo 2', system-ui, sans-serif;
-  --sans:       'DM Sans', system-ui, sans-serif;
-}
+      --muted:      #cbc6ba;
+      --line:       rgba(240,237,230,.1);
+      --r:          8px;
+      --serif:      'Exo 2', system-ui, sans-serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+    }
 
-[data-theme="dark"] {
-  --ink:        #f4f2ec;
-  --paper:      #010003;
-  --card:       #151515;
-  --card-lt:    #20211e;
-  --gold:       #e6c47d;
-  --accent:     #3c3489;
-  --accent-lt:  #6a6ab5;
-  --muted:      #b5ad9e;
-  --line:       rgba(240,237,230,.1);
-}
+    [data-theme="dark"] {
+      --ink:        #f4f2ec;
+      --paper:      #010003;
+      --card:       #151515;
+      --card-lt:    #20211e;
+      --gold:       #e6c47d;
+      --accent:     #3c3489;
+      --accent-lt:  #6a6ab5;
+      --muted:      #b5ad9e;
+      --line:       rgba(240,237,230,.1);
+    }
 
-[data-theme="dark"] .nav         { background: #010003; }
-[data-theme="dark"] .card        { background: #151515; }
-[data-theme="dark"] .book-tile   { background: #151515; }
-[data-theme="dark"] .notify-card { background: #151515; }
+    [data-theme="dark"] .nav         { background: #010003; }
+    [data-theme="dark"] .card        { background: #151515; }
+    [data-theme="dark"] .notify-card { background: #151515; }
 
-[data-theme="light"] {
-  --ink:        #1a1814;
-  --paper:      #f4f2ec;
-  --card:       #fffff2;
-  --card-lt:    #e8e2d6;
-  --muted:      #5a554e;
-  --gold:       #8B5E2A;  /* beeswax */
-  --accent:     #3c3489;
-  --accent-lt:  #534ab7;
-  --line:       rgba(55,51,42,.2);
-}
+    [data-theme="light"] {
+      --ink:        #1a1814;
+      --paper:      #f4f2ec;
+      --card:       #fffff2;
+      --card-lt:    #e8e2d6;
+      --muted:      #5a554e;
+      --gold:       #8B5E2A;
+      --accent:     #3c3489;
+      --accent-lt:  #534ab7;
+      --line:       rgba(55,51,42,.2);
+    }
 
-[data-theme="light"] .nav         { background: #f4f2ec; }
-[data-theme="light"] .card        { background: #fffff2; }
-[data-theme="light"] .book-tile   { background: #fffff2; }
-[data-theme="light"] .notify-card { background: #fffff2; }
-[data-theme="light"] .brand       { color: #1a1814; }
+    [data-theme="light"] .nav         { background: #f4f2ec; }
+    [data-theme="light"] .card        { background: #fffff2; }
+    [data-theme="light"] .notify-card { background: #fffff2; }
+    [data-theme="light"] .brand       { color: #1a1814; }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-/* ─── nav ─── */
-.nav {
-  position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: .9rem 2rem;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(8px);
-}
+    /* ─── nav ─── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
 
-.brand {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-  text-decoration: none;
-  letter-spacing: -.02em;
-}
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -.02em;
+    }
 
-.brand span { color: var(--accent); }
+    .brand span { color: var(--accent); }
 
-.navlinks { display: flex; align-items: center; gap: 1.6rem; }
+    .navlinks { display: flex; align-items: center; gap: 1.6rem; }
 
-.navlinks a {
-  font-size: .85rem;
-  font-weight: 400;
-  color: var(--muted);
-  text-decoration: none;
-  letter-spacing: .02em;
-  transition: color .2s;
-}
+    .navlinks a {
+      font-size: .85rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: color .2s;
+    }
 
-.navlinks a:hover { color: var(--accent); }
+    .navlinks a:hover { color: var(--accent); }
 
-.navlinks .pill {
-  background: var(--accent);
-  color: var(--paper);
-  padding: .42rem 1rem;
-  border-radius: 100px;
-  font-weight: 500;
-  transition: background .2s;
-}
+    .navlinks .pill {
+      background: var(--accent);
+      color: var(--paper);
+      padding: .42rem 1rem;
+      border-radius: 100px;
+      font-weight: 500;
+      transition: background .2s;
+    }
 
-.navlinks .pill:hover {
-  background: var(--accent-lt);
-  outline: 1.5px solid var(--gold);
-  outline-offset: 1px;
-}
+    .navlinks .pill:hover {
+      background: var(--accent-lt);
+      outline: 1.5px solid var(--gold);
+      outline-offset: 1px;
+    }
 
-.theme-toggle {
-  background: none;
-  border: 1.5px solid var(--line);
-  border-radius: 100px;
-  cursor: pointer;
-  padding: .35rem .6rem;
-  font-size: 1rem;
-  line-height: 1;
-  color: var(--muted);
-  transition: border-color .2s, color .2s;
-}
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--line);
+      border-radius: 100px;
+      cursor: pointer;
+      padding: .35rem .6rem;
+      font-size: 1rem;
+      line-height: 1;
+      color: var(--muted);
+      transition: border-color .2s, color .2s;
+    }
 
-.theme-toggle:hover { border-color: var(--gold); color: var(--ink); }
+    .theme-toggle:hover { border-color: var(--gold); color: var(--ink); }
 
-/* ─── page ─── */
-.page { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 6rem; }
+    /* ─── page ─── */
+    .page { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 6rem; }
 
-/* ─── hero ─── */
-.hero {
-  padding: 7rem 0 5rem;
-  border-bottom: 1px solid var(--line);
-}
+    /* ─── hero ─── */
+    .hero {
+      padding: 7rem 0 5rem;
+      border-bottom: 1px solid var(--line);
+    }
 
-.kicker {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: .88rem;
-  font-weight: 300;
-  color: var(--accent);
-  margin-bottom: 1.2rem;
-  letter-spacing: .06em;
-}
+    .kicker {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: .88rem;
+      font-weight: 300;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      letter-spacing: .06em;
+    }
 
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  line-height: 1.12;
-  letter-spacing: -.03em;
-  font-weight: 700;
-  color: var(--ink);
-  max-width: 700px;
-  margin-bottom: 1.4rem;
-}
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.12;
+      letter-spacing: -.03em;
+      font-weight: 700;
+      color: var(--ink);
+      max-width: 700px;
+      margin-bottom: 1.4rem;
+    }
 
-.hero h1 em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--accent);
-}
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--accent);
+    }
 
-.subhead {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 580px;
-  line-height: 1.75;
-  margin-bottom: 1.4rem;
-  font-weight: 300;
-}
+    .subhead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+      font-weight: 300;
+    }
 
-.subhead strong { color: var(--ink); font-weight: 500; }
+    .subhead strong { color: var(--ink); font-weight: 500; }
 
-.hero-note {
-  font-size: .82rem;
-  color: var(--muted);
-  letter-spacing: .03em;
-  margin-top: 2rem;
-  font-style: italic;
-}
+    .hero-note {
+      font-size: .82rem;
+      color: var(--muted);
+      letter-spacing: .03em;
+      margin-top: 2rem;
+      font-style: italic;
+    }
 
-.ctaRow { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+    .ctaRow { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
 
-/* ─── buttons ─── */
-.btn {
-  display: inline-flex; align-items: center;
-  padding: .65rem 1.4rem;
-  border-radius: var(--r);
-  font-family: var(--sans);
-  font-size: .88rem;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all .2s;
-  border: 1.5px solid transparent;
-}
+    /* ─── buttons ─── */
+    .btn {
+      display: inline-flex; align-items: center;
+      padding: .65rem 1.4rem;
+      border-radius: var(--r);
+      font-family: var(--sans);
+      font-size: .88rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .2s;
+      border: 1.5px solid transparent;
+    }
 
-.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn.primary:hover { background: var(--accent-lt); border-color: var(--accent-lt); }
-.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-.btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn.primary:hover { background: var(--accent-lt); border-color: var(--accent-lt); }
+    .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ─── sections ─── */
-section { margin-top: 5rem; }
+    /* ─── sections ─── */
+    section { margin-top: 5rem; }
 
-.section-label {
-  font-family: var(--serif);
-  font-size: .78rem;
-  font-weight: 500;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.6rem;
-}
+    .section-label {
+      font-family: var(--serif);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.6rem;
+    }
 
-/* ─── what is this ─── */
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  padding: 2.2rem 2.4rem;
-}
+    /* ─── cards ─── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 2.2rem 2.4rem;
+    }
 
-.card h2 {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -.02em;
-  margin-bottom: 1rem;
-  color: var(--ink);
-}
+    .card h2 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
 
-.card p {
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: .97rem;
-  margin-bottom: .8rem;
-}
+    .card p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .97rem;
+      margin-bottom: .8rem;
+    }
 
-.card p:last-child { margin-bottom: 0; }
+    .card p:last-child { margin-bottom: 0; }
 
-/* ─── book tiles ─── */
-.books-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.2rem;
-}
+    /* ─── book tile — single featured ─── */
+    .book-featured {
+      background: var(--card);
+      border: 1px solid var(--gold);
+      border-radius: var(--r);
+      padding: 2.2rem 2.4rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-@media (max-width: 700px) { .books-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 420px) { .books-grid { grid-template-columns: 1fr; } }
+    .book-featured::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+    }
 
-.book-tile {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  padding: 1.8rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: .7rem;
-  transition: border-color .2s;
-  position: relative;
-  overflow: hidden;
-}
+    .book-featured .year {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .6rem;
+    }
 
-.book-tile::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--accent);
-  opacity: .5;
-  transition: opacity .25s;
-}
+    .book-featured h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+      letter-spacing: -.02em;
+      margin-bottom: .8rem;
+    }
 
-.book-tile:hover { border-color: var(--accent); }
-.book-tile:hover::before { opacity: 1; }
+    .book-featured p {
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
 
-.book-tile .year {
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+    .book-featured .status {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
 
-.book-tile h3 {
-  font-family: var(--serif);
-  font-size: .97rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.35;
-  letter-spacing: -.01em;
-  flex: 1;
-}
+    /* ─── two-col grid for novellas + notify ─── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
 
-.book-tile .poems {
-  font-size: .78rem;
-  color: var(--accent);
-  font-style: italic;
-  letter-spacing: .02em;
-}
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
 
-.book-tile.coming {
-  opacity: .7;
-  border-style: dashed;
-}
+    /* ─── notify ─── */
+    .notify-card {
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: var(--r);
+      padding: 2.2rem 2.4rem;
+    }
 
-.book-tile.nonfic::before { background: var(--gold); }
-.book-tile.nonfic:hover { border-color: var(--gold); }
-.book-tile.nonfic p.poems {
-  color: var(--muted);
-}
+    .notify-card h2 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      margin-bottom: .8rem;
+      color: var(--ink);
+    }
 
-.book-tile .status {
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
+    .notify-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .9rem;
+      margin-bottom: 1.2rem;
+    }
 
-/* ─── notify ─── */
-.notify-card {
-  background: var(--card);
-  border: 1px solid var(--accent);
-  border-radius: var(--r);
-  padding: 2.2rem 2.4rem;
-}
+    /* ─── footer ─── */
+    .footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: .6rem;
+      font-size: .82rem;
+      color: var(--muted);
+    }
 
-.notify-card h2 {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -.02em;
-  margin-bottom: .8rem;
-  color: var(--ink);
-}
+    .footer a { color: var(--gold); text-decoration: none; }
+    .footer a:hover { opacity: .75; }
 
-.notify-card p {
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: .97rem;
-  margin-bottom: 1.2rem;
-}
+    .muted { color: var(--muted); }
 
-/* ─── footer ─── */
-.footer {
-  margin-top: 5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--line);
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: .6rem;
-  font-size: .82rem;
-  color: var(--muted);
-}
+    /* ─── animations ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-.footer a { color: var(--gold); text-decoration: none; }
-.footer a:hover { opacity: .75; }
-
-.muted { color: var(--muted); }
-
-/* ─── animations ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hero .kicker   { animation: fadeUp .5s ease both; animation-delay: .05s; }
-.hero h1        { animation: fadeUp .5s ease both; animation-delay: .12s; }
-.hero .subhead  { animation: fadeUp .5s ease both; animation-delay: .2s; }
-.hero .ctaRow   { animation: fadeUp .5s ease both; animation-delay: .28s; }
-.hero .hero-note { animation: fadeUp .5s ease both; animation-delay: .34s; }
+    .hero .kicker    { animation: fadeUp .5s ease both; animation-delay: .05s; }
+    .hero h1         { animation: fadeUp .5s ease both; animation-delay: .12s; }
+    .hero .subhead   { animation: fadeUp .5s ease both; animation-delay: .2s; }
+    .hero .ctaRow    { animation: fadeUp .5s ease both; animation-delay: .28s; }
+    .hero .hero-note { animation: fadeUp .5s ease both; animation-delay: .34s; }
   </style>
 </head>
 <body>
@@ -401,7 +380,6 @@ section { margin-top: 5rem; }
     <nav class="navlinks">
       <a href="#what">about</a>
       <a href="#books">the book</a>
-      <a href="#shadows">the novellas</a>
       <a href="#notify" class="pill">get notified</a>
       <button class="theme-toggle" id="themeToggle" aria-label="toggle dark mode">🌙</button>
     </nav>
@@ -411,90 +389,84 @@ section { margin-top: 5rem; }
 
     <!-- ─── hero ─── -->
     <section class="hero">
-  <p class="kicker">the quantum ceo · inner architecture for people who build things that matter</p>
-  <h1>The operating system underneath <em>the strategy.</em></h1>
-  <p class="subhead">
-    You already know that you think in shapes —
-    <strong>and how you think shapes the world</strong> — and what you build.
-    The Quantum CEO explores an inner architecture where
-    physics, geometry, neuroscience, and consciousness studies
-    meet the work you're actually doing in the world.
-  </p>
-  <p class="subhead">
-    Books and writing for people who think in systems and feel in metaphor.
-  </p>
-  <div class="ctaRow">
-    <a class="btn primary" href="#notify">get notified</a>
-    <a class="btn ghost" href="#books">explore the books</a>
-  </div>
-  <p class="hero-note">the research is ongoing · the observer is present</p>
-</section>
+      <p class="kicker">the quantum ceo · inner architecture for people who build things that matter</p>
+      <h1>The operating system underneath <em>the strategy.</em></h1>
+      <p class="subhead">
+        You already know that you think in shapes —
+        <strong>and how you think shapes the world</strong> — and what you build.
+        The Quantum CEO explores an inner architecture where
+        physics, geometry, neuroscience, and consciousness studies
+        meet the work you're actually doing in the world.
+      </p>
+      <p class="subhead">
+        Writing for people who think in systems and feel in metaphor.
+      </p>
+      <div class="ctaRow">
+        <a class="btn primary" href="#notify">get notified</a>
+        <a class="btn ghost" href="#books">the book</a>
+      </div>
+      <p class="hero-note">the research is ongoing · the observer is present</p>
+    </section>
 
     <!-- ─── what is this ─── -->
-   <div class="card">
-  <h2>The Quantum CEO is who we are being — not what we are doing.</h2>
-  <p>
-    It's the version of you that holds self-awareness and awareness of others simultaneously —
-    what transpersonal psychology calls being a witness to yourself in relation to the world.
-    Not detached. Not above it. Present, clear, and grounded in your own system.
-  </p>
-  <p>
-    <em>Quantum Currency: Field Research on Human Coherence</em> is the formal statement
-    of thirteen years of field research into the architecture of coherent human systems —
-    what they look like when they're functioning, what happens when they fragment,
-    and what becomes possible when the conditions for coherence are restored.
-  </p>
-  <p>
-    The nine principles that follow are not the beginning of that inquiry.
-    They are its first formal statement. The observer was present at the start.
-    She is present now.
-  </p>
-</div>
-
-    <!-- ─── books ─── -->
-<section id="books">
-  <p class="section-label">quantum currency · the research</p>
-  <div class="books-grid">
-
- <div class="book-tile nonfic" style="grid-column: 1 / -1;">
-  <p class="year">non-fiction · in progress</p>
-  <h3>Quantum Currency: Field Research on Human Coherence</h3>
-  <p class="poems">A rigorously researched, multi-disciplinary approach to the practical architecture of a coherent life — mapping quantum field theory, neuroscience, and geometric systems thinking onto the ten centres of the human system.</p>
-  <p class="status">coming soon · get notified ↓</p>
-</div>
-
-  </div>
-</section>
-
-<!-- ─── book of shadows ─── -->
-<section id="shadows">
-  <p class="section-label">the book of shadows series · fiction + songs</p>
-  <div class="card">
-    <h2>The novellas live on deiadorebel.life.</h2>
-    <p>
-      The Book of Shadows series — five intention-setting novellas, eight poems each,
-      each poem also a song — has found its home. The fiction, the sardonic spiritual satire,
-      the snake and the peacock, the school in the clouds: all of it lives at
-      <a href="https://deiadorebel.life" style="color:var(--accent);text-decoration:none;">deiadorebel.life</a>.
-    </p>
-    <p>
-      The songs that accompany each poem are at
-      <a href="https://deiadorebel.com" style="color:var(--accent);text-decoration:none;">deiadorebel.com</a>.
-      The research that runs through all of it is here.
-    </p>
-  </div>
-  
-</section>
-    <!-- ─── notify ─── -->
-    <section id="notify">
-      <div class="notify-card">
-        <h2>Get notified when Quantum Currency is ready</h2>
+    <section id="what">
+      <p class="section-label">what this is</p>
+      <div class="card">
+        <h2>The Quantum CEO is who we are being — not what we are doing.</h2>
         <p>
-          The book is in progress and the Book of Shadows series is going to be republish soon. 
-          When they're ready, you'll be the first to know. No marketing list.
-          Just a couple of emails from a human when they become available.
+          It's the version of you that holds self-awareness and awareness of others simultaneously —
+          what transpersonal psychology calls being a witness to yourself in relation to the world.
+          Not detached. Not above it. Present, clear, and grounded in your own system.
         </p>
-        <a class="btn primary" href="https://thequantumceo.getform.com/x0g53" target="_blank" rel="noopener">notify me →</a>
+        <p>
+          <em>Quantum Currency: Field Research on Human Coherence</em> is the formal statement
+          of thirteen years of field research into the architecture of coherent human systems —
+          what they look like when they're functioning, what happens when they fragment,
+          and what becomes possible when the conditions for coherence are restored.
+        </p>
+        <p>
+          The observer was present at the start. She is present now.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── the book ─── -->
+    <section id="books">
+      <p class="section-label">quantum currency · the research</p>
+      <div class="book-featured">
+        <p class="year">non-fiction · in progress</p>
+        <h3>Quantum Currency: Field Research on Human Coherence</h3>
+        <p>A rigorously researched, multi-disciplinary approach to the practical architecture of a coherent life — mapping quantum field theory, neuroscience, and geometric systems thinking onto the ten centres of the human system. The convergence is the data point. The field of origin is not the argument.</p>
+        <p class="status">coming soon · get notified ↓</p>
+      </div>
+    </section>
+
+    <!-- ─── novellas + notify side by side ─── -->
+    <section id="notify">
+      <div class="two-col">
+
+        <div class="card">
+          <h2>The novellas live on deiadorebel.life.</h2>
+          <p>
+            The Book of Shadows series — five intention-setting novellas,
+            eight poems each, each poem also a song — has found its home.
+            The fiction, the sardonic spiritual satire, the snake and the peacock:
+            all of it lives at <a href="https://deiadorebel.life" style="color:var(--accent);text-decoration:none;">deiadorebel.life</a>.
+            The songs are at <a href="https://deiadorebel.com" style="color:var(--accent);text-decoration:none;">deiadorebel.com</a>.
+            The research that runs through all of it is here.
+          </p>
+        </div>
+
+        <div class="notify-card">
+          <h2>Get notified when Quantum Currency is ready</h2>
+          <p>
+            The book is in progress. When it's ready,
+            you'll be the first to know. No marketing list —
+            just a note from a human.
+          </p>
+          <a class="btn primary" href="https://thequantumceo.getform.com/x0g53" target="_blank" rel="noopener">notify me →</a>
+        </div>
+
       </div>
     </section>
 
@@ -510,14 +482,14 @@ section { margin-top: 5rem; }
     const toggle = document.getElementById("themeToggle");
     const saved = localStorage.getItem("theme-qceo") || "light";
     document.documentElement.setAttribute("data-theme", saved);
-    toggle.textContent = saved === "dark" ? "🌙" : "☀️";
+    toggle.textContent = saved === "dark" ? "☀️" : "🌙";
 
     toggle.addEventListener("click", () => {
       const current = document.documentElement.getAttribute("data-theme");
       const next = current === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       localStorage.setItem("theme-qceo", next);
-      toggle.textContent = next === "dark" ? "🌙" : "☀️";
+      toggle.textContent = next === "dark" ? "☀️" : "🌙";
     });
   </script>
 </body>
