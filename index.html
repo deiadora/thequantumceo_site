@@ -79,7 +79,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; transition: background .25s, color .25s; }
 
     /* ─── nav ─── */
     .nav {
@@ -381,7 +381,7 @@
       <a href="#what">about</a>
       <a href="#books">the book</a>
       <a href="#notify" class="pill">get notified</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="toggle dark mode">🌙</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="toggle colour mode">🌙</button>
     </nav>
   </header>
 
@@ -437,6 +437,7 @@
         <p class="year">non-fiction · in progress</p>
         <h3>Quantum Currency: Field Research on Human Coherence</h3>
         <p>A rigorously researched, multi-disciplinary approach to the practical architecture of a coherent life — mapping quantum field theory, neuroscience, and geometric systems thinking onto the ten centres of the human system. The convergence is the data point. The field of origin is not the argument.</p>
+        <!-- future anchor: pending — update year, status, and add buy/read link on publication -->
         <p class="status">coming soon · get notified ↓</p>
       </div>
     </section>
@@ -464,6 +465,7 @@
             you'll be the first to know. No marketing list —
             just a note from a human.
           </p>
+          <!-- future anchor: pending — replace form link with buy/read link on publication -->
           <a class="btn primary" href="https://thequantumceo.getform.com/x0g53" target="_blank" rel="noopener">notify me →</a>
         </div>
 
@@ -479,17 +481,49 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-    const toggle = document.getElementById("themeToggle");
-    const saved = localStorage.getItem("theme-qceo") || "light";
-    document.documentElement.setAttribute("data-theme", saved);
-    toggle.textContent = saved === "dark" ? "🌙" : "☀️";
 
+    const toggle  = document.getElementById("themeToggle");
+    const root    = document.documentElement;
+    const STORE   = "qc-theme"; // shared key across all ecosystem sites
+
+    // Detect system preference
+    const sysDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function resolveTheme() {
+      const saved = localStorage.getItem(STORE);
+      if (saved) return saved;                     // explicit user override
+      return sysDark.matches ? "dark" : "light";   // follow system
+    }
+
+    function applyTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      toggle.textContent = theme === "dark" ? "🌙" : "☀️";
+      toggle.setAttribute("aria-label", theme === "dark" ? "switch to light mode" : "switch to dark mode");
+    }
+
+    // Initial paint
+    applyTheme(resolveTheme());
+
+    // Toggle click — cycle: override opposite → clear override (return to system)
     toggle.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme");
+      const current = root.getAttribute("data-theme");
+      const sysTheme = sysDark.matches ? "dark" : "light";
       const next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      localStorage.setItem("theme-qceo", next);
-      toggle.textContent = next === "dark" ? "🌙" : "☀️";
+
+      if (next === sysTheme) {
+        // Returning to system default — clear the override
+        localStorage.removeItem(STORE);
+      } else {
+        localStorage.setItem(STORE, next);
+      }
+      applyTheme(next);
+    });
+
+    // Follow OS schedule changes if no manual override is set
+    sysDark.addEventListener("change", () => {
+      if (!localStorage.getItem(STORE)) {
+        applyTheme(sysDark.matches ? "dark" : "light");
+      }
     });
   </script>
 </body>
