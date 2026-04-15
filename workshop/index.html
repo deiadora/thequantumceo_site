@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>quantum currency workshop · step 7 · expression · egg of life</title>
-  <meta name="description" content="Seven spheres, each complete. Does each node in this system express itself fully — or does one collapse the others? Step 7 of the Quantum Currency Workshop — decentralised governance." />
-  <link rel="icon" href="/techtuition_favicon.png" type="image/png" />
+  <title>quantum currency workshop · step 8 · structure · octagon</title>
+  <meta name="description" content="Is the structure serving the flow — or strangling it? Step 8 of the Quantum Currency Workshop — currency in motion, tools, rhythms, and the playbook made operational." />
+  <link rel="icon" href="/thequantumceo_favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
@@ -16,21 +16,20 @@
       --card:       #0e171a;
       --card-lt:    #131f23;
       --gold:       #ecb02f;
-      --accent:     #1a6b9e;  /* node-7 · expression · egg of life · open sky */
-      --accent-lt:  #32849d;
-      --accent-dk:  #0C447C;
+      --accent:     #7b72d8;  /* node-8 · structure · octagon · twilight */
+      --accent-lt:  #9a92e0;
+      --accent-dk:  #3c3489;
       --teal:       #0f6e56;
       --teal-lt:    #E1F5EE;
       --node-1-red: #a9292a;
-      --node-3-amb: #c49a3c;
-      --node-5-can: #2d6a1f;
       --node-6-wat: #0f6e56;
-      --sky-lt:     #E6F1FB;
-      --sky-md:     #B5D4F4;
+      --node-7-blu: #1a6b9e;
+      --purple-lt:  #EEEDFE;
+      --purple-md:  #AFA9EC;
       --coral-lt:   #FCEAEA;
       --amber-lt:   #FAEEDA;
+      --blue-lt:    #E6F1FB;
       --green-lt:   #EAF3DE;
-      --water-lt:   #E1F5EE;
       --muted:      #cbc6ba;
       --line:       rgba(240,237,230,.1);
       --line-solid: rgba(240,237,230,.18);
@@ -46,17 +45,18 @@
       --card:       #fffff2;
       --card-lt:    #e8e2d6;
       --gold:       #8B5E2A;
-      --accent:     #1a6b9e;
-      --accent-dk:  #0C447C;
+      --accent:     #534AB7;
+      --accent-lt:  #6a62c8;
+      --accent-dk:  #26215C;
       --muted:      #7a7163;
       --line:       rgba(26,24,20,.1);
       --line-solid: rgba(26,24,20,.18);
-      --sky-lt:     #d4e8f7;
-      --sky-md:     #8ab8e8;
+      --purple-lt:  #e4e2f8;
+      --purple-md:  #9090d8;
       --coral-lt:   #f7e0e0;
       --amber-lt:   #f5e8cc;
+      --blue-lt:    #d8eaf7;
       --green-lt:   #d8edcc;
-      --water-lt:   #d0f0e4;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -99,7 +99,7 @@
 
     .qc-nav-num {
       width: 24px; height: 24px; border-radius: 50%;
-      background: var(--sky-lt); color: var(--accent-dk);
+      background: var(--purple-lt); color: var(--accent-dk);
       font-size: 11px; font-weight: 600;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--serif);
@@ -193,9 +193,9 @@
     }
 
     .slide-frame::before {
-      content: '✦';
-      position: absolute; top: -10px; right: 20px;
-      font-size: 200px; color: var(--accent);
+      content: '⬡';
+      position: absolute; top: -20px; right: 10px;
+      font-size: 210px; color: var(--accent);
       opacity: .05; line-height: 1; pointer-events: none;
     }
 
@@ -229,45 +229,59 @@
 
     .slide-divider { border: none; border-top: 1px solid var(--line); margin: 1.6rem 0; }
 
-    /* egg of life diagram */
-    .egg-wrap {
-      display: flex; align-items: flex-start;
-      gap: 2rem; margin: 1.2rem 0 1.6rem;
+    /* eight rhythms grid */
+    .rhythms-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 6px; margin: 1.2rem 0 1.6rem;
     }
 
-    .egg-svg { flex-shrink: 0; }
+    @media (max-width: 640px) { .rhythms-grid { grid-template-columns: 1fr 1fr; } }
 
-    .egg-key { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-
-    .ek-item {
-      border-radius: var(--r); padding: 10px 13px;
+    .rhythm-chip {
+      border-radius: var(--r); padding: 12px 12px;
+      text-align: center;
     }
 
-    .ek-item .ek-label {
-      font-family: var(--serif); font-size: 11px; font-weight: 600;
-      letter-spacing: .07em; text-transform: uppercase; margin-bottom: 3px;
+    .rhythm-chip .rc-cadence {
+      font-family: var(--serif); font-size: 10px; font-weight: 600;
+      letter-spacing: .09em; text-transform: uppercase; margin-bottom: 4px;
     }
 
-    .ek-item .ek-desc {
-      font-size: 12px; line-height: 1.5; font-weight: 300;
+    .rhythm-chip .rc-name {
+      font-size: 12px; font-weight: 400; line-height: 1.4;
     }
 
-    .ek-1 { background: var(--sky-lt); }
-    .ek-1 .ek-label { color: var(--accent-dk); }
-    .ek-1 .ek-desc  { color: var(--accent); }
+    .rc-daily   { background: var(--green-lt); }
+    .rc-daily .rc-cadence { color: #27500A; }
+    .rc-daily .rc-name    { color: #3B6D11; }
 
-    .ek-2 { background: var(--coral-lt); }
-    .ek-2 .ek-label { color: #7a1a1a; }
-    .ek-2 .ek-desc  { color: var(--node-1-red); }
+    .rc-weekly  { background: var(--blue-lt); }
+    .rc-weekly .rc-cadence { color: #0C447C; }
+    .rc-weekly .rc-name    { color: #185FA5; }
 
-    .ek-3 { background: var(--amber-lt); }
-    .ek-3 .ek-label { color: #633806; }
-    .ek-3 .ek-desc  { color: #854F0B; }
+    .rc-monthly { background: var(--purple-lt); }
+    .rc-monthly .rc-cadence { color: var(--accent-dk); }
+    .rc-monthly .rc-name    { color: var(--accent-dk); }
 
-    @media (max-width: 580px) {
-      .egg-wrap { flex-direction: column; }
-      .egg-svg { margin: 0 auto; }
-    }
+    .rc-quarterly { background: var(--amber-lt); }
+    .rc-quarterly .rc-cadence { color: #633806; }
+    .rc-quarterly .rc-name    { color: #854F0B; }
+
+    .rc-trigger { background: var(--coral-lt); }
+    .rc-trigger .rc-cadence { color: #7a1a1a; }
+    .rc-trigger .rc-name    { color: var(--node-1-red); }
+
+    .rc-annual  { background: var(--purple-lt); }
+    .rc-annual .rc-cadence { color: var(--accent-dk); }
+    .rc-annual .rc-name    { color: var(--accent-dk); }
+
+    .rc-vector  { background: var(--green-lt); }
+    .rc-vector .rc-cadence { color: #27500A; }
+    .rc-vector .rc-name    { color: #3B6D11; }
+
+    .rc-exit    { background: var(--amber-lt); }
+    .rc-exit .rc-cadence { color: #633806; }
+    .rc-exit .rc-name    { color: #854F0B; }
 
     .slide-question {
       font-family: var(--display); font-size: 1.2rem; font-weight: 500;
@@ -301,15 +315,15 @@
     }
     .signal-text { font-size: .88rem; color: var(--muted); line-height: 1.6; font-weight: 300; }
 
-    .sig-full     { color: var(--accent-dk); }
-    .sig-collapse { color: var(--node-1-red); }
-    .sig-silent   { color: #633806; }
+    .sig-flows      { color: var(--accent-dk); }
+    .sig-calcifies  { color: #633806; }
+    .sig-collapses  { color: var(--node-1-red); }
 
     .insight-block {
-      background: var(--sky-lt); border-radius: var(--r); padding: 16px 20px;
+      background: var(--purple-lt); border-radius: var(--r); padding: 16px 20px;
     }
     .insight-block .fac-body { color: var(--accent-dk); }
-    .insight-block .fac-body strong { color: #042C53; }
+    .insight-block .fac-body strong { color: #1a1055; }
 
     /* ══ EXERCISE ══ */
     .ex-intro {
@@ -327,7 +341,7 @@
 
     .ex-num {
       width: 26px; height: 26px; border-radius: 50%;
-      background: var(--sky-lt); color: var(--accent-dk);
+      background: var(--purple-lt); color: var(--accent-dk);
       font-size: 11px; font-weight: 600;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; font-family: var(--serif);
@@ -343,43 +357,40 @@
       margin-bottom: 14px; padding-left: 36px; font-weight: 300;
     }
 
-    /* node map */
-    .node-map {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 8px; margin-left: 36px; margin-bottom: 10px;
+    /* rhythm builder */
+    .rhythm-builder {
+      display: flex; flex-direction: column; gap: 6px;
+      margin-left: 36px; margin-bottom: 10px;
     }
 
-    @media (max-width: 520px) { .node-map { grid-template-columns: 1fr; margin-left: 0; } }
-
-    .node-cell {
-      background: var(--card); border: 1px solid var(--line-solid);
-      border-radius: var(--r); padding: 14px; position: relative;
+    .rb-row {
+      display: grid; grid-template-columns: 100px 1fr 1fr;
+      gap: 8px; align-items: start;
     }
 
-    .node-cell::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 2px; background: var(--accent); opacity: .3;
-      border-radius: var(--r) var(--r) 0 0;
+    @media (max-width: 580px) {
+      .rb-row { grid-template-columns: 1fr; }
     }
 
-    .node-role {
+    .rb-cadence {
+      border-radius: var(--r); padding: 10px 12px;
       font-family: var(--serif); font-size: 12px; font-weight: 600;
-      color: var(--accent-dk); margin-bottom: 4px;
-      letter-spacing: .02em;
+      letter-spacing: .04em; line-height: 1.3;
     }
 
-    .node-hint {
-      font-size: 11px; color: var(--muted);
-      font-style: italic; line-height: 1.5; margin-bottom: 10px;
-    }
+    .rbc-daily     { background: var(--green-lt); color: #27500A; }
+    .rbc-weekly    { background: var(--blue-lt); color: #0C447C; }
+    .rbc-monthly   { background: var(--purple-lt); color: var(--accent-dk); }
+    .rbc-quarterly { background: var(--amber-lt); color: #633806; }
+    .rbc-trigger   { background: var(--coral-lt); color: #7a1a1a; }
+    .rbc-annual    { background: var(--purple-lt); color: var(--accent-dk); }
 
     .write-field {
       width: 100%; background: var(--paper);
       border: 1px solid var(--line-solid); border-radius: 6px;
       padding: 10px 12px; font-family: var(--sans); font-size: .88rem;
       color: var(--ink); line-height: 1.6;
-      resize: vertical; min-height: 70px;
+      resize: vertical; min-height: 60px;
       transition: border-color .2s; -webkit-appearance: none;
     }
     .write-field::placeholder { color: var(--muted); opacity: .6; font-style: italic; }
@@ -390,34 +401,56 @@
       width: calc(100% - 36px);
     }
 
-    /* collapse check — interactive */
-    .collapse-check {
-      margin-left: 36px; margin-bottom: 10px;
-      display: flex; flex-direction: column; gap: 6px;
+    /* tools inventory */
+    .tools-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px; margin-left: 36px; margin-bottom: 10px;
     }
 
-    .cc-row {
-      display: flex; align-items: flex-start; gap: 10px;
+    @media (max-width: 580px) { .tools-grid { grid-template-columns: 1fr; margin-left: 0; } }
+
+    .tool-cell {
       background: var(--card); border: 1px solid var(--line-solid);
-      border-radius: var(--r); padding: 12px 14px;
-      cursor: pointer; transition: border-color .2s;
-    }
-    .cc-row:hover { border-color: var(--accent); }
-    .cc-row.checked { border-color: var(--accent); background: var(--sky-lt); }
-
-    .cc-box {
-      width: 16px; height: 16px; border-radius: 3px;
-      border: 1.5px solid var(--line-solid); flex-shrink: 0;
-      margin-top: 2px; display: flex; align-items: center;
-      justify-content: center; font-size: 10px;
-      transition: all .2s; background: var(--paper);
-    }
-    .cc-row.checked .cc-box {
-      background: var(--accent); border-color: var(--accent); color: #fff;
+      border-radius: var(--r); padding: 14px;
     }
 
-    .cc-text { font-size: .88rem; color: var(--muted); line-height: 1.55; font-weight: 300; }
-    .cc-row.checked .cc-text { color: var(--accent-dk); }
+    .tool-label {
+      font-family: var(--serif); font-size: 12px; font-weight: 600;
+      color: var(--accent-dk); margin-bottom: 4px;
+    }
+
+    .tool-hint {
+      font-size: 11px; color: var(--muted);
+      font-style: italic; line-height: 1.5; margin-bottom: 10px;
+    }
+
+    /* health check */
+    .health-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8px; margin-left: 36px; margin-bottom: 10px;
+    }
+
+    @media (max-width: 520px) { .health-grid { grid-template-columns: 1fr; margin-left: 0; } }
+
+    .health-cell {
+      background: var(--card); border: 1px solid var(--line-solid);
+      border-radius: var(--r); padding: 14px;
+    }
+
+    .health-label {
+      font-family: var(--serif); font-size: 12px; font-weight: 600;
+      margin-bottom: 4px; letter-spacing: .02em;
+    }
+
+    .hl-measure { color: var(--accent-dk); }
+    .hl-owner   { color: #185FA5; }
+    .hl-cadence { color: #633806; }
+    .hl-trigger { color: var(--node-1-red); }
+
+    .health-hint {
+      font-size: 11px; color: var(--muted);
+      font-style: italic; line-height: 1.5; margin-bottom: 10px;
+    }
 
     .ex-reflection {
       background: var(--card); border-left: 2px solid var(--accent);
@@ -463,16 +496,17 @@
       .slide-frame { background: #f9f8f4 !important; border: 1pt solid #ccc !important; border-radius: 0 !important; padding: 1.5rem !important; }
       .slide-frame::before { display: none; }
       .slide-pull { border-left: 2pt solid #555 !important; color: #1a1814 !important; }
-      .ek-item { border: 1pt solid #ccc !important; background: #f5f5f0 !important; }
-      .ek-1 .ek-label, .ek-2 .ek-label, .ek-3 .ek-label { color: #1a1814 !important; }
+      .rhythm-chip { border: 1pt solid #ccc !important; background: #f5f5f0 !important; }
+      .rc-daily .rc-cadence, .rc-weekly .rc-cadence, .rc-monthly .rc-cadence,
+      .rc-quarterly .rc-cadence, .rc-trigger .rc-cadence, .rc-annual .rc-cadence,
+      .rc-vector .rc-cadence, .rc-exit .rc-cadence { color: #1a1814 !important; }
       .ex-intro { background: #f5f5f0 !important; border-left: 2pt solid #555 !important; }
       .write-field, .write-field-lg { border: 1pt solid #aaa !important; background: #fff !important; min-height: 2cm !important; color: #1a1814 !important; }
-      .node-cell { border: 1pt solid #ccc !important; background: #f9f8f4 !important; }
-      .cc-row { border: 1pt solid #ccc !important; background: #f9f8f4 !important; }
-      .cc-row.checked { background: #d4e8f7 !important; }
+      .rb-cadence { background: #f5f5f0 !important; color: #1a1814 !important; }
+      .tool-cell, .health-cell { border: 1pt solid #ccc !important; background: #f9f8f4 !important; }
       .ex-reflection { border-left: 2pt solid #555 !important; background: #f5f5f0 !important; }
       .signal-card { border: 1pt solid #ccc !important; background: #f9f8f4 !important; }
-      .insight-block { background: #d4e8f7 !important; }
+      .insight-block { background: #e4e2f8 !important; }
       .ws-footer { border-top: 1pt solid #ccc; }
     }
 
@@ -489,17 +523,17 @@
 
   <nav class="qc-nav" aria-label="Quantum Currency workshop navigation">
     <div class="qc-nav-inner">
-      <a href="https://deiadorebel.com/workshop" class="qc-nav-prev" aria-label="Previous: Step 6 Transmission">
+      <a href="https://techtuition.ai/workshop" class="qc-nav-prev" aria-label="Previous: Step 7 Expression">
         <span class="arrow">←</span>
-        <span>Transmission</span>
+        <span>Expression</span>
       </a>
 
       <a href="https://deiadora.com/workshop" class="qc-nav-centre" aria-label="Workshop home">
         <div class="qc-nav-step-row">
-          <div class="qc-nav-num">7</div>
-          <span class="qc-nav-name">Expression · Egg of life</span>
+          <div class="qc-nav-num">8</div>
+          <span class="qc-nav-name">Structure · Octagon</span>
         </div>
-        <span class="qc-nav-geo">techtuition.ai · step 7 of 9</span>
+        <span class="qc-nav-geo">thequantumceo.com · step 8 of 9</span>
         <div class="qc-nav-dots">
           <div class="qc-dot done"></div>
           <div class="qc-dot done"></div>
@@ -508,14 +542,15 @@
           <div class="qc-dot done"></div>
           <div class="qc-dot done"></div>
           <div class="qc-dot done"></div>
+          <div class="qc-dot done"></div>
           <div class="qc-dot active"></div>
-          <div class="qc-dot"></div><div class="qc-dot"></div>
+          <div class="qc-dot"></div>
         </div>
       </a>
 
-      <!-- future anchor: pending — update href when Step 8 is live at thequantumceo.com/workshop -->
-      <a href="https://thequantumceo.com/workshop" class="qc-nav-next" aria-label="Next: Step 8 Structure">
-        <span>Structure</span>
+      <!-- future anchor: pending — update href when Step 9 is live at deiadora.live/workshop -->
+      <a href="https://deiadora.live/workshop" class="qc-nav-next" aria-label="Next: Step 9 Source">
+        <span>Source</span>
         <span class="arrow">→</span>
       </a>
     </div>
@@ -526,9 +561,9 @@
   <main class="page">
 
     <header class="ws-header">
-      <p class="ws-eyebrow">Quantum currency workshop · step 7 of 9</p>
-      <h1 class="ws-title">Seven spheres, each complete.<br><em>Does each one express itself fully?</em></h1>
-      <p class="ws-sub">The Egg of Life is seven spheres arranged so each one touches the centre — each complete, each sovereign, none diminished by the others. Governance asks: does this system allow that, or does one sphere collapse the rest?</p>
+      <p class="ws-eyebrow">Quantum currency workshop · step 8 of 9</p>
+      <h1 class="ws-title">Is the structure serving the flow —<br><em>or strangling it?</em></h1>
+      <p class="ws-sub">The octagon bridges the square (human-made structure) and the circle (natural flow). Currency in motion: the tools, rhythms, and reporting that make everything built in Steps 0–7 actually run.</p>
     </header>
 
     <div class="tabs" role="tablist">
@@ -541,44 +576,49 @@
     <div id="panel-slide" class="panel active" role="tabpanel">
       <div class="slide-frame">
         <div class="slide-content">
-          <p class="slide-eyebrow">Quantum currency workshop · step 7 · expression · egg of life</p>
-          <h2 class="slide-heading">Everyone gets a voice.<br>One lead keeps the system moving.</h2>
-          <p class="slide-body">The Egg of Life is seven spheres — one at the centre, six arranged symmetrically around it, each touching the centre, none overlapping. Every sphere is complete. None depends on the others to exist. And yet the geometry only holds because each one is exactly where it is, in relation to the whole.</p>
-          <p class="slide-pull">"Seven complete spheres. If one person's voice drowns the others, the geometry breaks. Good soil means every function can actually speak."</p>
-          <p class="slide-body">Decentralised governance is not the absence of leadership. It is the condition where leadership does not need to be present for the system to function. The playbook from Step 6 encoded the shared language. Step 7 tests it: can each node in this system express itself fully — make decisions, raise concerns, name truths — without waiting for permission from the centre?</p>
+          <p class="slide-eyebrow">Quantum currency workshop · step 8 · structure · octagon</p>
+          <h2 class="slide-heading">The octagon does not choose<br>between form and flow. It holds both.</h2>
+          <p class="slide-body">The octagon has eight sides — more than the square's rigid four, fewer than the circle's infinite curve. It is the geometric form that mediates between structure and fluidity: enough edges to hold shape, enough curvature to allow movement. The currency in motion framework asks the same question: what structure does this system need to breathe, without calcifying into something that can no longer move?</p>
+          <p class="slide-pull">"Thorny ground has structure — too much of it. The octagon bridges form and flow. The question is whether what gets built here breathes or calcifies."</p>
+          <p class="slide-body">Eight rhythms, eight touchpoints, the playbook made into a living cadence. Not a reporting burden — a heartbeat. The system checks in with itself at the right intervals, adjusts where needed, and keeps moving in the direction chosen in Step 5.</p>
           <hr class="slide-divider">
-          <p class="slide-eyebrow" style="margin-bottom:12px;">Three states of expression</p>
-          <div class="egg-wrap">
-            <svg class="egg-svg" width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-label="Egg of Life — seven spheres each complete">
-              <!-- centre -->
-              <circle cx="75" cy="75" r="22" fill="none" stroke="#1a6b9e" stroke-width="1.5" opacity=".8"/>
-              <!-- six surrounding -->
-              <circle cx="75"  cy="31"  r="22" fill="none" stroke="#1a6b9e" stroke-width="1" opacity=".4"/>
-              <circle cx="113" cy="53"  r="22" fill="none" stroke="#1a6b9e" stroke-width="1" opacity=".4"/>
-              <circle cx="113" cy="97"  r="22" fill="none" stroke="#1a6b9e" stroke-width="1" opacity=".4"/>
-              <circle cx="75"  cy="119" r="22" fill="none" stroke="#1a6b9e" stroke-width="1" opacity=".4"/>
-              <circle cx="37"  cy="97"  r="22" fill="none" stroke="#1a6b9e" stroke-width="1" opacity=".4"/>
-              <circle cx="37"  cy="53"  r="22" fill="none" stroke="#1a6b9e" stroke-width="1" opacity=".4"/>
-              <!-- centre dot -->
-              <circle cx="75" cy="75" r="3" fill="#1a6b9e" opacity=".6"/>
-            </svg>
-            <div class="egg-key">
-              <div class="ek-item ek-1">
-                <p class="ek-label">Full expression</p>
-                <p class="ek-desc">Every node speaks. Decisions get made. Concerns get named. The geometry holds because each sphere is where it needs to be.</p>
-              </div>
-              <div class="ek-item ek-2">
-                <p class="ek-label">Collapse</p>
-                <p class="ek-desc">One sphere expands until the others contract around it. The geometry appears to hold but is no longer the Egg of Life — it's a single large sphere with satellites.</p>
-              </div>
-              <div class="ek-item ek-3">
-                <p class="ek-label">Silence</p>
-                <p class="ek-desc">One or more spheres are present but not expressing. They take up space without contributing. The system appears complete but several nodes are not actually functioning.</p>
-              </div>
+          <p class="slide-eyebrow" style="margin-bottom:10px;">Eight rhythms — the octagon of operational cadence</p>
+          <div class="rhythms-grid">
+            <div class="rhythm-chip rc-daily">
+              <p class="rc-cadence">Daily</p>
+              <p class="rc-name">Cash position glance</p>
+            </div>
+            <div class="rhythm-chip rc-weekly">
+              <p class="rc-cadence">Weekly</p>
+              <p class="rc-name">Pipeline & receivables</p>
+            </div>
+            <div class="rhythm-chip rc-monthly">
+              <p class="rc-cadence">Monthly</p>
+              <p class="rc-name">Full P&L + vector check</p>
+            </div>
+            <div class="rhythm-chip rc-quarterly">
+              <p class="rc-cadence">Quarterly</p>
+              <p class="rc-name">Canvas review + scenarios</p>
+            </div>
+            <div class="rhythm-chip rc-trigger">
+              <p class="rc-cadence">Triggered</p>
+              <p class="rc-name">Playbook invoked on contested decision</p>
+            </div>
+            <div class="rhythm-chip rc-annual">
+              <p class="rc-cadence">Annual</p>
+              <p class="rc-name">Full system audit + playbook revisit</p>
+            </div>
+            <div class="rhythm-chip rc-vector">
+              <p class="rc-cadence">Vector check</p>
+              <p class="rc-name">Is the direction still right?</p>
+            </div>
+            <div class="rhythm-chip rc-exit">
+              <p class="rc-cadence">Exit horizon</p>
+              <p class="rc-name">Step 9 progress review</p>
             </div>
           </div>
-          <p class="slide-question">Which state is closest to how this system actually operates — and what would full expression require?</p>
-          <p class="slide-note">The answer is almost never "full expression." The question is what's in the way.</p>
+          <p class="slide-question">Which of these rhythms exist — and which are the system pretending it doesn't need?</p>
+          <p class="slide-note">The ones that feel least necessary are usually the most important.</p>
         </div>
       </div>
     </div>
@@ -587,31 +627,31 @@
     <div id="panel-deeper" class="panel" role="tabpanel">
 
       <div class="fac-section">
-        <p class="fac-label">Why decentralisation comes after the playbook</p>
-        <p class="fac-body">Decentralised governance without a shared language is not freedom — it is ambiguity. Teams that attempt to distribute decision-making without first building the playbook tend to find that decentralisation simply means everyone makes different decisions from different assumptions. <strong>Step 7 works because Steps 0–6 have done the groundwork.</strong> The field is set. The torus is visible. The values are recognised. The problem is named. The canvas is mapped. The direction is chosen. The playbook encodes the language. Now — and only now — can the nodes express themselves without the centre collapsing inward.</p>
+        <p class="fac-label">Structure as infrastructure, not constraint</p>
+        <p class="fac-body">The word "structure" tends to activate resistance in creative and entrepreneurial teams — it implies rigidity, bureaucracy, the thing that slows everything down. The octagon reframes this. <strong>Structure is the infrastructure that makes flow possible.</strong> A river needs banks. A torus needs form. A team needs rhythms — not because rhythms are interesting in themselves, but because without them, the system has no way of knowing when it's drifting off the vector until it has drifted very far.</p>
       </div>
 
       <div class="fac-section">
-        <p class="fac-label">The collapse pattern — what it actually looks like</p>
-        <p class="fac-body">Collapse in a team governance system almost never looks like domination. It looks like helpfulness. <strong>The sphere that expands tends to do so by being helpful — answering questions before others can, solving problems before they're brought forward, making decisions that technically belong to another node.</strong> The other spheres contract not because they're told to, but because the centre keeps arriving first. The Egg of Life exercise surfaces this pattern by asking each node to name what it actually decides — and what it sends upward instead.</p>
+        <p class="fac-label">The vector check — the most important rhythm</p>
+        <p class="fac-body">Of the eight rhythms, the vector check is the one most teams skip — and the one whose absence causes the most structural drift. <strong>A direction chosen in Step 5 remains valid only as long as the conditions that generated it remain roughly stable.</strong> When the canvas changes significantly, when the torus state shifts, when the vesica from Step 2 turns out to have been thinner than it appeared — the vector needs to be revisited. The vector check is the rhythm that catches this before a year has passed and the system has been moving in a direction that no longer holds.</p>
       </div>
 
       <div class="fac-section">
-        <p class="fac-label">Expression signals — what to listen for</p>
-        <div class="signal-card"><p class="signal-soil sig-full">Full expression</p><p class="signal-text">Team members can name decisions they made this week without the founder's input. Concerns get raised proactively, not reactively. Different nodes use the playbook differently — and that variation is visible and discussed, not hidden.</p></div>
-        <div class="signal-card"><p class="signal-soil sig-collapse">Collapse</p><p class="signal-text">"I usually just ask [name]." Decisions wait until a particular person is available. The same person is named as the decision-maker in most of the node maps. Other nodes describe their role in terms of what they support rather than what they lead.</p></div>
-        <div class="signal-card"><p class="signal-soil sig-silent">Silence</p><p class="signal-text">A node that agrees with everything in the room but says nothing substantive. A function that is represented in the org chart but not in the financial decisions. Contributions framed as suggestions rather than positions.</p></div>
+        <p class="fac-label">Structure signals — what to listen for</p>
+        <div class="signal-card"><p class="signal-soil sig-flows">Structure serving flow</p><p class="signal-text">The rhythms exist and happen without a significant coordination cost. The monthly P&L is shared and read, not just sent. The vector check produces a genuine "yes, still" or a real conversation about whether it still holds. The playbook gets invoked when a contested decision arises — not as a formality but as a genuine resource.</p></div>
+        <div class="signal-card"><p class="signal-soil sig-calcifies">Structure calcifying</p><p class="signal-text">Meetings about the financial picture that no one quite believes are useful but happen anyway. Reports that get sent but not read. A cadence that was set up for a different stage of the system and never updated. The structure has stopped serving the flow and is now creating drag.</p></div>
+        <div class="signal-card"><p class="signal-soil sig-collapses">Structure absent</p><p class="signal-text">The financial picture is reconstructed on demand rather than maintained continuously. There is no regular moment when the team checks whether the vector still holds. The playbook exists but is not in active use. The system is running on memory and intention rather than rhythm and structure.</p></div>
       </div>
 
       <div class="fac-section">
-        <p class="fac-label">The financial dimension of expression</p>
-        <p class="fac-body">Financial collapse — where all financial decisions route through one person — is one of the most common structural vulnerabilities in early-stage teams. It creates a single point of failure, a knowledge bottleneck, and a hidden power imbalance that affects every other decision the team makes. <strong>The question Step 7 asks is not just "who makes financial decisions" but "who could make them if the centre weren't available."</strong> A team where the answer is "no one" has not yet built financial governance — it has built financial dependency.</p>
+        <p class="fac-label">Tools — the question that actually matters</p>
+        <p class="fac-body">Teams frequently debate which tools to use for financial management. The debate is usually a displacement of a more uncomfortable question: <strong>who is responsible for ensuring the financial picture is current, accurate, and shared?</strong> The tool is secondary. The ownership is primary. A spreadsheet owned by one person who updates it consistently is more effective than a sophisticated accounting platform that no one maintains. Step 8 names the owner before it names the tool.</p>
       </div>
 
       <div class="fac-section">
         <p class="fac-label">What this step tends to produce</p>
         <div class="insight-block">
-          <p class="fac-body">The most common revelation in Step 7 is that <strong>the nodes that have been silent are silent not because they have nothing to contribute, but because no one has ever asked them to lead.</strong> The exercise of mapping each node's actual decision domain — what they decide, what they escalate, what they could decide if the playbook supported it — tends to surface a quiet competence that the collapse pattern has been obscuring. The geometry of the Egg of Life was always there. Step 7 makes it visible.</p>
+          <p class="fac-body">The most common revelation in Step 8 is that <strong>several of the rhythms already exist informally — they just don't have names, owners, or agreed formats.</strong> The monthly P&L conversation happens, but only when someone decides to initiate it. The vector check happens, but only when things feel wrong. The playbook gets consulted, but only when a decision is already in crisis. Formalising what already exists informally is not bureaucracy. It is the octagon: giving the form that the flow already has.</p>
         </div>
       </div>
 
@@ -621,123 +661,129 @@
     <div id="panel-exercise" class="panel" role="tabpanel">
 
       <div class="ex-intro">
-        This exercise maps the actual governance of the system — who decides what, where the collapse is happening, and what full expression would require for each node. <strong>Do this individually first, then compare maps.</strong> The differences between individual maps are the most important data this exercise produces.
+        This exercise builds the operational infrastructure — the rhythms, tools, measures, and owners that make the system run without constant manual effort. <strong>Name owners specifically.</strong> A rhythm without an owner is a wish. A measure without an owner is noise. The octagon holds because each of its eight sides is a complete edge — nothing delegated to "the team" in general.
       </div>
 
-      <!-- Q1 — node map -->
+      <!-- Q1 — rhythm builder -->
       <div class="ex-block">
         <div class="ex-q-row">
           <div class="ex-num">1</div>
-          <p class="ex-q">The node map — who actually decides what</p>
+          <p class="ex-q">The rhythm builder — what gets checked, when, by whom</p>
         </div>
-        <p class="ex-sub">Name each node in your system — each function, role, or person with a distinct domain. For each one: what do they actually decide independently? What do they escalate? And what could they decide if the playbook supported it?</p>
-        <div class="node-map">
-          <div class="node-cell">
-            <p class="node-role">Node — name or role</p>
-            <p class="node-hint">Decides independently:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 1 decides"></textarea>
-            <p class="node-hint" style="margin-top:8px;">Escalates to centre:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 1 escalates"></textarea>
-            <p class="node-hint" style="margin-top:8px;">Could decide with playbook support:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 1 could decide"></textarea>
+        <p class="ex-sub">For each cadence: what specifically gets reviewed, and who owns making it happen? Leave blank anything that genuinely doesn't apply to this system at this stage.</p>
+        <div class="rhythm-builder">
+          <div class="rb-row">
+            <div class="rb-cadence rbc-daily">Daily</div>
+            <textarea class="write-field" rows="2" placeholder="What gets reviewed…" aria-label="Daily what"></textarea>
+            <textarea class="write-field" rows="2" placeholder="Owner…" aria-label="Daily owner"></textarea>
           </div>
-          <div class="node-cell">
-            <p class="node-role">Node — name or role</p>
-            <p class="node-hint">Decides independently:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 2 decides"></textarea>
-            <p class="node-hint" style="margin-top:8px;">Escalates to centre:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 2 escalates"></textarea>
-            <p class="node-hint" style="margin-top:8px;">Could decide with playbook support:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 2 could decide"></textarea>
+          <div class="rb-row">
+            <div class="rb-cadence rbc-weekly">Weekly</div>
+            <textarea class="write-field" rows="2" placeholder="What gets reviewed…" aria-label="Weekly what"></textarea>
+            <textarea class="write-field" rows="2" placeholder="Owner…" aria-label="Weekly owner"></textarea>
           </div>
-          <div class="node-cell">
-            <p class="node-role">Node — name or role</p>
-            <p class="node-hint">Decides independently:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 3 decides"></textarea>
-            <p class="node-hint" style="margin-top:8px;">Escalates to centre:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 3 escalates"></textarea>
-            <p class="node-hint" style="margin-top:8px;">Could decide with playbook support:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Node 3 could decide"></textarea>
+          <div class="rb-row">
+            <div class="rb-cadence rbc-monthly">Monthly</div>
+            <textarea class="write-field" rows="2" placeholder="What gets reviewed…" aria-label="Monthly what"></textarea>
+            <textarea class="write-field" rows="2" placeholder="Owner…" aria-label="Monthly owner"></textarea>
           </div>
-          <div class="node-cell">
-            <p class="node-role">The centre — founder / lead</p>
-            <p class="node-hint">Decides that should stay at centre:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Centre stays"></textarea>
-            <p class="node-hint" style="margin-top:8px;">Currently decides that could move to nodes:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Centre could move"></textarea>
-            <p class="node-hint" style="margin-top:8px;">What the centre needs to stop deciding:</p>
-            <textarea class="write-field" rows="2" placeholder="Write here…" aria-label="Centre stop deciding"></textarea>
+          <div class="rb-row">
+            <div class="rb-cadence rbc-quarterly">Quarterly</div>
+            <textarea class="write-field" rows="2" placeholder="What gets reviewed…" aria-label="Quarterly what"></textarea>
+            <textarea class="write-field" rows="2" placeholder="Owner…" aria-label="Quarterly owner"></textarea>
+          </div>
+          <div class="rb-row">
+            <div class="rb-cadence rbc-trigger">Triggered</div>
+            <textarea class="write-field" rows="2" placeholder="What triggers a playbook invocation…" aria-label="Triggered what"></textarea>
+            <textarea class="write-field" rows="2" placeholder="Who activates it…" aria-label="Triggered owner"></textarea>
+          </div>
+          <div class="rb-row">
+            <div class="rb-cadence rbc-annual">Annual</div>
+            <textarea class="write-field" rows="2" placeholder="What gets fully revisited…" aria-label="Annual what"></textarea>
+            <textarea class="write-field" rows="2" placeholder="Owner…" aria-label="Annual owner"></textarea>
           </div>
         </div>
       </div>
 
-      <!-- Q2 — collapse check -->
+      <!-- Q2 — tools inventory -->
       <div class="ex-block">
         <div class="ex-q-row">
           <div class="ex-num">2</div>
-          <p class="ex-q">The collapse check</p>
+          <p class="ex-q">Tools — what the system uses to hold the financial picture</p>
         </div>
-        <p class="ex-sub">Check any that are currently true in this system. These are not failures — they are the starting points for what the governance needs to address.</p>
-        <div class="collapse-check" id="collapseCheck">
-          <div class="cc-row" onclick="toggleCheck(this)" aria-label="collapse item">
-            <div class="cc-box"></div>
-            <p class="cc-text">Most financial decisions wait for one person to be available before they can move forward.</p>
+        <p class="ex-sub">Name the actual tools — not aspirational ones. What is in use right now, or what will be in use within the next 30 days? For each: who owns keeping it current?</p>
+        <div class="tools-grid">
+          <div class="tool-cell">
+            <p class="tool-label">Financial tracking</p>
+            <p class="tool-hint">P&L, cashflow, invoicing. Where does the money picture live?</p>
+            <textarea class="write-field" rows="3" placeholder="Tool + owner…" aria-label="Financial tracking tool"></textarea>
           </div>
-          <div class="cc-row" onclick="toggleCheck(this)" aria-label="collapse item">
-            <div class="cc-box"></div>
-            <p class="cc-text">Team members phrase their positions as suggestions or questions rather than as decisions or recommendations.</p>
+          <div class="tool-cell">
+            <p class="tool-label">Pipeline & revenue</p>
+            <p class="tool-hint">Proposals, contracts, expected income. What's coming in and when?</p>
+            <textarea class="write-field" rows="3" placeholder="Tool + owner…" aria-label="Pipeline tool"></textarea>
           </div>
-          <div class="cc-row" onclick="toggleCheck(this)" aria-label="collapse item">
-            <div class="cc-box"></div>
-            <p class="cc-text">There is at least one function in the system that is represented but not actually leading anything financial.</p>
-          </div>
-          <div class="cc-row" onclick="toggleCheck(this)" aria-label="collapse item">
-            <div class="cc-box"></div>
-            <p class="cc-text">Decisions made in meetings sometimes get revisited or reversed outside of meetings.</p>
-          </div>
-          <div class="cc-row" onclick="toggleCheck(this)" aria-label="collapse item">
-            <div class="cc-box"></div>
-            <p class="cc-text">The financial picture is understood in detail by fewer than half the people in this room.</p>
-          </div>
-          <div class="cc-row" onclick="toggleCheck(this)" aria-label="collapse item">
-            <div class="cc-box"></div>
-            <p class="cc-text">If the founder were unavailable for two weeks, at least one financial decision would stall.</p>
+          <div class="tool-cell">
+            <p class="tool-label">Playbook & governance</p>
+            <p class="tool-hint">Where does the playbook from Step 6 live? How is it accessed?</p>
+            <textarea class="write-field" rows="3" placeholder="Tool + owner…" aria-label="Playbook tool"></textarea>
           </div>
         </div>
       </div>
 
-      <!-- Q3 -->
+      <!-- Q3 — health measures -->
       <div class="ex-block">
         <div class="ex-q-row">
           <div class="ex-num">3</div>
-          <p class="ex-q">What full expression requires</p>
+          <p class="ex-q">What gets measured — the four health indicators</p>
         </div>
-        <p class="ex-sub">Looking at the node map and the collapse check: what would it take for each node to express itself fully? Not perfectly — fully. What playbook additions, decision rights, or permission structures would change the geometry from collapse toward the Egg of Life?</p>
-        <textarea class="write-field write-field-lg" rows="5" placeholder="Write here…" aria-label="What full expression requires"></textarea>
+        <p class="ex-sub">A system in motion needs to know when it's healthy and when it isn't. Name one measure for each indicator — something that can be checked at the monthly rhythm without requiring an audit.</p>
+        <div class="health-grid">
+          <div class="health-cell">
+            <p class="health-label hl-measure">Torus health</p>
+            <p class="health-hint">Is the loop closing? Revenue covering costs covering personal needs?</p>
+            <textarea class="write-field" rows="3" placeholder="How we measure this…" aria-label="Torus health measure"></textarea>
+          </div>
+          <div class="health-cell">
+            <p class="health-label hl-owner">Vector alignment</p>
+            <p class="health-hint">Are decisions still moving in the direction chosen in Step 5?</p>
+            <textarea class="write-field" rows="3" placeholder="How we check this…" aria-label="Vector alignment measure"></textarea>
+          </div>
+          <div class="health-cell">
+            <p class="health-label hl-cadence">Playbook use</p>
+            <p class="health-hint">Is the playbook being invoked when it should be, or bypassed?</p>
+            <textarea class="write-field" rows="3" placeholder="How we track this…" aria-label="Playbook use measure"></textarea>
+          </div>
+          <div class="health-cell">
+            <p class="health-label hl-trigger">Expression quality</p>
+            <p class="health-hint">Are all nodes expressing? Is any sphere silencing or expanding?</p>
+            <textarea class="write-field" rows="3" placeholder="How we notice this…" aria-label="Expression quality measure"></textarea>
+          </div>
+        </div>
       </div>
 
       <!-- Q4 -->
       <div class="ex-block">
         <div class="ex-q-row">
           <div class="ex-num">4</div>
-          <p class="ex-q">The first governance decision</p>
+          <p class="ex-q">The first rhythm that starts this week</p>
         </div>
-        <p class="ex-sub">One concrete change — one decision right shifted, one escalation removed, one new communication structure added — that moves this system toward the Egg of Life. Name it specifically enough that it can be implemented before the next meeting.</p>
-        <textarea class="write-field write-field-lg" rows="4" placeholder="Write here…" aria-label="First governance decision"></textarea>
+        <p class="ex-sub">Of all the rhythms in the builder — which one starts this week? Not next month, not "when we have a system in place." The octagon begins turning when one edge activates. Name it, name the owner, and name the day.</p>
+        <textarea class="write-field write-field-lg" rows="4" placeholder="Rhythm · owner · day it starts…" aria-label="First rhythm this week"></textarea>
       </div>
 
       <div class="ex-reflection">
-        <p class="refl-label">The Sower question at step 7</p>
-        <p class="refl-q">Return to the lens: <strong>what kind of ground does expression land in, in this system?</strong></p>
-        <p class="refl-q">A team in good soil where one node raises a concern tends to find the concern received rather than deflected. A team in thorny ground where one node raises a concern tends to find it crowded out by the next priority before anything changes. The governance structure is the infrastructure that determines which of these is true — regardless of intention.</p>
-        <p class="refl-q"><strong>Step 8 takes what's been built across Steps 0–7 and makes it operational — tools, rhythms, reporting, the playbook made live.</strong> The Egg of Life built here is the target architecture. Step 8 is how it runs in practice.</p>
+        <p class="refl-label">The Sower question at step 8</p>
+        <p class="refl-q">Return to the lens: <strong>is the structure serving the flow — or has it already started to calcify?</strong></p>
+        <p class="refl-q">The octagon is self-correcting if the vector check rhythm is honoured. A system that checks in with its own direction regularly will notice when the structure has stopped serving the flow and will adjust. A system that skips the vector check tends to discover the drift only when the cost of correction is high.</p>
+        <p class="refl-q"><strong>Step 9 is the last step — and the one that makes all the others sustainable.</strong> The sovereign exit strategy is not about leaving. It is about designing the system so that it can continue, evolve, and hand itself forward — with or without the founder present. The octagon runs. Step 9 ensures it can run without you.</p>
       </div>
 
     </div>
 
     <footer class="ws-footer">
       <span>Quantum currency workshop · Deiadora Blanche © 2026</span>
-      <span>Step 7 of 9 · Expression · Egg of life · <a href="https://techtuition.ai">techtuition.ai</a></span>
+      <span>Step 8 of 9 · Structure · Octagon · <a href="https://thequantumceo.com">thequantumceo.com</a></span>
     </footer>
 
   </main>
@@ -752,19 +798,6 @@
       document.getElementById('panel-' + name).classList.add('active');
       tabEl.classList.add('active');
       tabEl.setAttribute('aria-selected', 'true');
-    }
-
-    function toggleCheck(row) {
-      row.classList.toggle('checked');
-      const box = row.querySelector('.cc-box');
-      box.textContent = row.classList.contains('checked') ? '✓' : '';
-      saveChecks();
-    }
-
-    function saveChecks() {
-      const states = [...document.querySelectorAll('.cc-row')]
-        .map(r => r.classList.contains('checked'));
-      sessionStorage.setItem('qc-s7-checks', JSON.stringify(states));
     }
 
     const root    = document.documentElement;
@@ -786,23 +819,11 @@
     });
 
     document.querySelectorAll('textarea').forEach(ta => {
-      const key = 'qc-s7-' + ta.getAttribute('aria-label');
+      const key = 'qc-s8-' + ta.getAttribute('aria-label');
       const saved = sessionStorage.getItem(key);
       if (saved) ta.value = saved;
       ta.addEventListener('input', () => sessionStorage.setItem(key, ta.value));
     });
-
-    // restore collapse check state
-    const savedChecks = sessionStorage.getItem('qc-s7-checks');
-    if (savedChecks) {
-      const states = JSON.parse(savedChecks);
-      document.querySelectorAll('.cc-row').forEach((row, i) => {
-        if (states[i]) {
-          row.classList.add('checked');
-          row.querySelector('.cc-box').textContent = '✓';
-        }
-      });
-    }
   </script>
 </body>
 </html>
